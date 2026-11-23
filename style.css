@@ -18,39 +18,40 @@
 body {
     margin: 0;
     padding: 0;
+
+    font-family: "Outfit", sans-serif;
     /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
-    background-color: var(--bg);
+
     color: #fff;
-    background-image: url(/src/espresso-surrounded-by-scattered-coffee-beans-dark-surface\ 1.png);
-    background-size: contain;
-    background-repeat: no-repeat;
+
     min-height: 100vh;
 }
 
 header {
     display: flex;
-    background: var(--mute);
+    position: absolute;
     margin: 0;
+    padding: 0;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-    position:fixed;
+
     top: 0;
     left: 0;
     width: 100%;
+
     z-index: 999;
-    height: ;
 
     background: linear-gradient(135deg,
             rgba(255, 255, 255, 0.14) 0%,
             rgba(255, 255, 255, 0.05) 80%);
     backdrop-filter: blur(2.5px) saturate(70%);
-    -webkit-backdrop-filter: blur(22px) saturate(140%);
-   
+    -webkit-backdrop-filter: blur(8px) saturate(140%);
+
     border-bottom: 1px solid rgba(255, 255, 255, 0.22);
     box-shadow:
         inset 0 1px 1px rgba(255, 255, 255, 0.35),
-        /* Top specular highlight */
-        0 8px 32px rgba(0, 0, 0, 0.35);
+        Top specular highlight 0 8px 32px rgba(0, 0, 0, 0.35);
 
 }
 
@@ -60,28 +61,37 @@ header {
     align-items: center;
     justify-items: center;
     color: var(--lightAcc);
-    padding: 0 20px 0px 20px;
+    padding: 0 20px 10px 20px;
 }
 
 
 .logo a {
-    font-size: 50px;
+    font-size: 82px;
     text-decoration: none;
-    margin-top: -10px;
-    font-weight: 400;
+    margin: -15px 40px 0;
+    font-weight: 300;
     color: var(--lightAcc);
     font-family: "Playball", cursive;
 }
 
 .cart {
-    height: 50px;
-    width: 50px;
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
     display: flex;
     justify-self: flex-end;
-    align-self: center;
-    border-radius: 50%;
+
+
     background-color: #fff;
-    margin-right: 30px;
+
+    top: 10px;
+    position: sticky;
+
+    z-index: 1;
+}
+
+.empty {
+    margin-left: 15%;
 }
 
 nav {
@@ -111,10 +121,10 @@ li {
     text-decoration: none;
     list-style-type: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 7px;
+    font-size: 0.75em;
 }
 
-@media (max-width: 425px) {
+/* @media (max-width: 450px) {
     header {
         flex-wrap: wrap;
         padding: 12px 20px;
@@ -147,12 +157,308 @@ li {
     }
 
     nav a {
-        font-size: 0.75rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
     }
+
+    main {
+        margin-top: 110vh
+    }
+} */
+
+.home-container {
+    width: 100%;
+    max-width: 100%;
+    /* Caps the width at your design's exact size */
+    height: 100vh;
+    /* Locks the height to 1000px */
+    margin: 0;
+    padding: 0;
+
+
+    background-image: url(src/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right center;
+
 }
 
 
 main {
-    padding: 0 10%;
-    margin-top: 10%;
+    padding: 0;
+    margin: 0;
+}
+
+article {
+
+
+    padding: 0 11%;
+    width: 700px;
+
+    /* min-height: 100vh; */
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+
+
+    transform: rotate(0deg);
+
+    opacity: 1;
+
+    justify-content: center;
+
+
+}
+
+.hero {
+    position: relative;
+    padding-top: 15%;
+}
+
+
+.hero h3 {
+
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Outfit", sans-serif;
+    line-height: 1;
+    letter-spacing: 0.2em;
+    text-transformation: uppercase;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+    font-size: small;
+
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 62px;
+    line-height: 58px;
+    letter-spacing: 0;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+
+    /* Dimensions & Appearance */
+
+    margin: 0;
+    /* Safer than fixed height so text won't overflow if it wraps */
+    opacity: 1;
+}
+
+.hero p {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10px;
+    line-height: 18px;
+    letter-spacing: 0;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+}
+
+
+.hero button {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1;
+
+    min-width: 150px;
+    height: 40px;
+    padding: 12px 16px;
+    border-radius: 100px;
+
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+.categories {
+    /* position: relative;
+    margin-top: 8%; */
+
+
+    background-color: var(--mute);
+
+    width: 100%;
+    height: 9rem;
+
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+
+}
+
+.logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 600px;
+}
+
+
+.item {
+    color: #2A0000;
+    background: #CE7B26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 80px;
+    height: 80px;
+
+    border-radius: 12px;
+}
+
+.page2-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.product-header {
+    margin: 20px 0;
+}
+
+.product-header h2 {
+
+    color: var(--bg);
+
+    display: flex;
+    align-items: center;
+    justify-self: center;
+
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 32px;
+    text-align: center;
+
+}
+
+.panel {
+   
+
+    margin-bottom: 100px;
+
+    width: 90%;
+    max-width: 100wh;
+    height: 470px;
+    padding: 15px;
+    margin: auto;
+    border-radius: 16px;
+    z-index: -1;
+
+
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+
+    gap: 10px;
+
+}
+
+.card {
+    background: #fbf9f6;
+    border-radius: 12px;
+    height: 440px;
+    border: 1px rgba(240, 219, 143, 0.673);
+
+    padding: 15px;
+
+}
+
+.card img {
+    align-self: center;
+    width: 288px;
+    height: 294px;
+    border-radius: 12px;
+
+}
+
+.prod-details {
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    
+    gap: 15px;
+}
+
+.productName {
+
+    font-weight: 600;
+    font-size: 28px;
+    color: #0b0b0b;
+
+    letter-spacing: 0;
+
+
+}
+
+.desxx {
+
+    color: var(--darkAcc);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+}
+
+
+
+.order {
+    color: var(--darkAcc);
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.order button {
+    background: var(--darkAcc);
+    color: #fff;
+    font-size: 10px;
+    font-family: "Poppins", sans-serif;
+
+
+    width: 52px;
+    height: 31px;
+    border-radius: 8px;
+
+    padding: 5px 14px;
+    
+    gap: 10px;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
