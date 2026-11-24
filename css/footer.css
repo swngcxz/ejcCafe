@@ -75,13 +75,17 @@
 .input-wrapper input {
     width: 100%;
     padding: 12px 16px 12px 42px;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 999px;
     background-color: #FFFFFF;
     font-family: 'Poppins', sans-serif;
     font-size: 0.875rem;
     color: #2B1E16;
     outline: none;
+}
+
+.input-wrapper input:focus {
+    border-color: #715c4f; 
 }
 
 .input-wrapper input::placeholder {
@@ -102,14 +106,14 @@
 }
 
 .newsletter-form button:hover {
-    background-color: #4A3326;
+    background-color: #783d1a;
 }
 
 /* --- Main Dark Footer --- */
 .footer-main {
     background-color: #302218;
     color: #FFFFFF;
-    padding: 64px 24px 80px;
+    padding: 64px 24px 20px;
 }
 
 .footer-container {
@@ -172,6 +176,18 @@
     opacity: 0.75;
 }
 
+.copyright {
+    grid-column: 1 / -1; /* Spans across all columns on desktop, tablet, and mobile */
+    margin-top: 24px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.089);
+    text-align: center;
+    color: #D6CEC7;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+}
+
+
 /* --- Responsive Breakpoints --- */
 @media (max-width: 960px) {
     .footer-container {
@@ -203,3 +219,4 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+

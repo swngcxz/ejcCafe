@@ -8,57 +8,184 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-   
+    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="/css/home.css">
+
     <link rel="stylesheet" href="/css/footer.css">
     <title>ejc Cafe</title>
 </head>
 
 <body>
-    <!-- <div class="cart">
-        <img src="" alt="">
-    </div> -->
+
     <header>
         <div class="logo"><a href="">ejc</a></div>
-        <nav>
+        <nav id="primary-navigation">
             <ul>
-                <li><a href="">HOME</a></li>
-                <li><a href="">COFFEE</a></li>
-                <li><a href="">DESSERT</a></li>
-                <li><a href="">ABOUT</a></li>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#coffee">COFFEE</a></li>
+                <li><a href="#dessert">DESSERT</a></li>
+                <a href="#about">
+                    <li>ABOUT</li>
+                </a>
             </ul>
 
         </nav>
-        <div class="empty">
+        <div class="">
+            <button class="cart" id="cartButton" type="button">
+                CART <span class="cart-count" id="cartCount">0</span>
+            </button>
 
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation"
+                aria-controls="primary-navigation" aria-expanded="false">
+                ☰
+            </button>
         </div>
     </header>
 
     <main>
-        <section class="home">
+
+        <!-- SHOPPING CART MODAL -->
+        <div class="cart-modal" id="cartModal" hidden>
+
+            <div class="cart-overlay" id="cartOverlay"></div>
+
+            <div class="cart-content">
+
+                <div class="cart-header">
+                    <div>
+                        <h2>Your Cart</h2>
+                        <p>Review your selected orders</p>
+                    </div>
+
+                    <button class="cart-close" id="closeCart" aria-label="Close cart">
+                        &times;
+                    </button>
+                </div>
+
+                <div class="cart-body" id="cartItems">
+
+                    <!-- Cart items will be dynamically displayed here -->
+
+                </div>
+
+                <div class="cart-footer">
+
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>Total Items</span>
+                            <span id="totalItems">0</span>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="cartSubtotal">₱0.00</span>
+                        </div>
+
+                        <div class="summary-row grand-total">
+                            <span>Total</span>
+                            <span id="cartTotal">₱0.00</span>
+                        </div>
+                    </div>
+
+                    <button class="checkout-btn" id="checkoutButton">
+                        Proceed to Checkout
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+        <section class="home" id="home" aria-roledescription="carousel" aria-label="Featured at ejc coffee">
             <div class="home-container">
-                <article class="hero">
-                    <h3>WELCOME</h3>
-                    <h1>We serve the richest coffee in the city!</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae illo assumenda cupiditate nisi nemo
-                        id
-                        perferendis voluptate delectus? </p>
-                    <button>Order Now</button>
-                </article>
+
+                <div class="slides">
+
+                    <!-- Slide 1: original hero -->
+                    <article class="slide slide--1 is-active" role="group" aria-roledescription="slide"
+                        aria-label="1 of 3">
+                        <div class="slide-bg"></div>
+                        <div class="hero">
+                            <h3 class="reveal">WELCOME</h3>
+                            <h1 class="reveal">We serve the richest coffee in the city!</h1>
+                            <p class="reveal">Single-origin beans, roasted in small batches and pulled to order. Come
+                                in, sit down, and taste the difference.</p>
+                            <a class="btn reveal" href="#coffee">Order Now</a>
+                        </div>
+                    </article>
+
+                    <!-- Slide 2: calming -->
+                    <article class="slide slide--2" role="group" aria-roledescription="slide" aria-label="2 of 3">
+                        <div class="slide-bg"></div>
+                        <div class="hero">
+                            <h3 class="reveal">SLOW MORNINGS</h3>
+                            <h1 class="reveal">Slow down. Your cup is worth the wait.</h1>
+                            <p class="reveal">Every cup is poured by hand and never rushed. Find a quiet corner and let
+                                the first sip set the pace for your day.</p>
+                            <a class="btn reveal" href="#coffee">Browse Coffee</a>
+                        </div>
+                    </article>
+
+                    <!-- Slide 3: luxury / modern -->
+                    <article class="slide slide--3" role="group" aria-roledescription="slide" aria-label="3 of 3">
+                        <div class="slide-bg"></div>
+                        <div class="hero">
+                            <h3 class="reveal">SIGNATURE BLEND</h3>
+                            <h1 class="reveal">Crafted with care, served with elegance.</h1>
+                            <p class="reveal">Our house blend is paired with desserts baked each morning, made to be
+                                savored slowly, one sip and one bite at a time.</p>
+                            <a class="btn reveal" href="#dessert">Explore Desserts</a>
+                        </div>
+                        <figure class="slide-figure reveal">
+                            <img src="/src/bg2.webp" alt="Latte with heart-shaped foam art, surrounded by coffee beans"
+                                loading="lazy">
+                        </figure>
+                    </article>
+
+                </div>
+
+                <!-- Controls -->
+                <div class="controls">
+                    <div class="dots" role="tablist" aria-label="Choose slide">
+                        <button class="dot is-active" role="tab" aria-selected="true"
+                            aria-label="Go to slide 1"></button>
+                        <button class="dot" role="tab" aria-selected="false" aria-label="Go to slide 2"></button>
+                        <button class="dot" role="tab" aria-selected="false" aria-label="Go to slide 3"></button>
+                    </div>
+                    <div class="arrows">
+                        <button class="arrow arrow--prev" aria-label="Previous slide">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M15 5l-7 7 7 7" />
+                            </svg>
+                        </button>
+                        <button class="arrow arrow--next" aria-label="Next slide">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
 
 
             </div>
             <div class="categories">
-                <div class="logos">
-                    <div class="item">LOGO</div>
-                    <div class="item">LOGO</div>
-                    <div class="item">LOGO</div>
-                    <div class="item">LOGO</div>
+                <div class="brands">
+                    <div class="item">BRAND</div>
+                    <div class="item">BRAND</div>
+                    <div class="item">BRAND</div>
+                    <div class="item">BRAND</div>
                 </div>
             </div>
         </section>
 
 
-        <section class="page2">
+        <section class="page2" id="coffee">
             <div class="product-container">
                 <div class="product-header">
                     <h2>OUR SPECIAL COFFEE</h2>
@@ -71,7 +198,7 @@
                             <div class="productName">Caffè Crema</div>
                             <div class="desxx">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
                             <div class="order">
-                                <div class="price">250php</div>
+                                <div class="price">210php</div>
                                 <button>ADD</button>
                             </div>
 
@@ -85,7 +212,7 @@
                             <div class="productName">Caramel Macchiato</div>
                             <div class="desxx">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
                             <div class="order">
-                                <div class="price">250php</div>
+                                <div class="price">220php</div>
                                 <button>ADD</button>
                             </div>
 
@@ -100,7 +227,7 @@
                             <div class="productName">Petite Crème Espresso</div>
                             <div class="desxx">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
                             <div class="order">
-                                <div class="price">250php</div>
+                                <div class="price">240php</div>
                                 <button>ADD</button>
                             </div>
 
@@ -115,7 +242,7 @@
                             <div class="productName">Reserve Americano Noir</div>
                             <div class="desxx">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
                             <div class="order">
-                                <div class="price">250php</div>
+                                <div class="price">180php</div>
                                 <button>ADD</button>
                             </div>
 
@@ -125,9 +252,9 @@
                 </div>
             </div>
 
-            <div class="dessert-container">
+            <div class="dessert-container" id="dessert">
                 <div class="product-header">
-                    <h2>OUR SPECIAL COFFEE</h2>
+                    <h2>OUR SPECIAL DESSERT</h2>
                 </div>
 
                 <div class="panel">
@@ -137,7 +264,7 @@
                             <div class="productName">Espresso Cloud</div>
                             <div class="desxx">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
                             <div class="order">
-                                <div class="price">250php</div>
+                                <div class="price">260php</div>
                                 <button>ADD</button>
                             </div>
 
@@ -151,7 +278,7 @@
                             <div class="productName">Tiramisu Rocher</div>
                             <div class="desxx">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
                             <div class="order">
-                                <div class="price">250php</div>
+                                <div class="price">280php</div>
                                 <button>ADD</button>
                             </div>
 
@@ -166,7 +293,7 @@
                             <div class="productName">Brioche à la Crème</div>
                             <div class="desxx">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
                             <div class="order">
-                                <div class="price">250php</div>
+                                <div class="price">220php</div>
                                 <button>ADD</button>
                             </div>
 
@@ -181,7 +308,7 @@
                             <div class="productName">Caffè Cialda</div>
                             <div class="desxx">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
                             <div class="order">
-                                <div class="price">250php</div>
+                                <div class="price">240php</div>
                                 <button>ADD</button>
                             </div>
 
@@ -189,94 +316,103 @@
 
                     </div>
                 </div>
-              
-               
+
+
 
             </div>
-         </section>
+        </section>
 
     </main>
 
-     <footer class="site-footer">
+    <footer class="site-footer" id="about">
 
-    <div class="newsletter-banner">
-     
-      <img src="/src/beans.png" alt="Roasted coffee beans" class="beans-decor beans-left">
-      
-      <div class="newsletter-content">
-        <h2>Join in and get 15% off!</h2>
-        <p>Subscribe to our newsletter to get a 15% off discount code.</p>
-        
-        <form class="newsletter-form" action="#" method="POST">
-          <div class="input-wrapper">
-            <i class="fa-regular fa-envelope"></i>
-            <input type="email" placeholder="Email address" required>
-          </div>
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
+        <div class="newsletter-banner">
 
-      <img src="/src/beans.png" alt="Roasted coffee beans" class="beans-decor beans-right">
-    </div>
+            <img src="/src/beans.png" alt="Roasted coffee beans" class="beans-decor beans-left">
 
-    <!-- Bottom Dark Footer Links -->
-    <div class="footer-main">
-      <div class="footer-container">
-        
-        <div class="footer-brand">
-          <h3>COFFEE</h3>
+            <div class="newsletter-content">
+                <h2>Join in and get 15% off!</h2>
+                <p>Subscribe to our newsletter to get a 15% off discount code.</p>
+
+                <form class="newsletter-form" action="#" method="POST">
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" placeholder="Email address" required>
+                    </div>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+            <img src="/src/beans.png" alt="Roasted coffee beans" class="beans-decor beans-right">
         </div>
 
-        <div class="footer-col">
-          <h4>PRIVACY</h4>
-          <ul>
-            <li><a href="#">Terms of use</a></li>
-            <li><a href="#">Privacy policy</a></li>
-            <li><a href="#">Cookies</a></li>
-          </ul>
+        <!-- Bottom Dark Footer Links -->
+        <div class="footer-main">
+            <div class="footer-container">
+
+                <div class="footer-brand">
+                    <h3>COFFEE</h3>
+                </div>
+
+                <div class="footer-col">
+                    <h4>PRIVACY</h4>
+                    <ul>
+                        <li><a href="#">Terms of use</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>SERVICES</h4>
+                    <ul>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Order ahead</a></li>
+                        <li><a href="#">Menu</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>ABOUT US</h4>
+                    <ul>
+                        <li><a href="#">Find a location</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Our story</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>INFORMATION</h4>
+                    <ul>
+                        <li><a href="#">Plans pricing</a></li>
+                        <li><a href="#">Sell your products</a></li>
+                        <li><a href="#">Jobs</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col social-col">
+                    <h4>SOCIAL MEDIA</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="copyright">
+                    &copy; Copyright 2026 FED Assessment
+                </div>
+            </div>
         </div>
 
-        <div class="footer-col">
-          <h4>SERVICES</h4>
-          <ul>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Order ahead</a></li>
-            <li><a href="#">Menu</a></li>
-          </ul>
-        </div>
 
-        <div class="footer-col">
-          <h4>ABOUT US</h4>
-          <ul>
-            <li><a href="#">Find a location</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Our story</a></li>
-          </ul>
-        </div>
+    </footer>
 
-        <div class="footer-col">
-          <h4>INFORMATION</h4>
-          <ul>
-            <li><a href="#">Plans pricing</a></li>
-            <li><a href="#">Sell your products</a></li>
-            <li><a href="#">Jobs</a></li>
-          </ul>
-        </div>
+    <script src="/script/script.js"></script>
+    <script src="/script/home.js"></script>
 
-        <div class="footer-col social-col">
-          <h4>SOCIAL MEDIA</h4>
-          <div class="social-links">
-            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          </div>
-        </div>
 
-      </div>
-    </div>
-  </footer>
-
+    </script>
 </body>
 
 </html>

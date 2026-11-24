@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "category": "coffee",
+    "productName": "Caffe Crema",
+    "description": "Rich espresso balanced with velvety steamed milk and a touch of sweetened condensed milk.",
+    "price": 210,
+    "currency": "PHP",
+    "image": "src/products/spanish-latte.png"
+  },
+  {
+    "id": 2,
+    "category": "coffee",
+    "productName": "Caramel Macchiato",
+    "description": "Freshly steamed milk with vanilla syrup, marked with espresso and topped with caramel drizzle.",
+    "price": 220,
+    "currency": "PHP",
+    "image": "src/products/caramel-macchiato.png"
+  },
+  {
+    "id": 3,
+    "category": "coffee",
+    "productName": "Einspanner Latte",
+    "description": "Bold double-shot espresso topped with a thick, chilled layer of lightly sweetened whipped cream.",
+    "price": 240,
+    "currency": "PHP",
+    "image": "src/products/einspanner-latte.png"
+  },
+  {
+    "id": 4,
+    "category": "coffee",
+    "productName": "Coffee Latte",
+    "description": "Smooth, full-bodied espresso blended with creamy steamed milk and a light layer of foam.",
+    "price": 180,
+    "currency": "PHP",
+    "image": "src/products/coffee-latte.png"
+  },
+  {
+    "id": 5,
+    "category": "desserts",
+    "productName": "Burnt Basque Cheesecake",
+    "description": "Creamy, caramelized crustless cheesecake with a rich, velvety center.",
+    "price": 260,
+    "currency": "PHP",
+    "image": "src/products/basque-cheesecake.png"
+  },
+  {
+    "id": 6,
+    "category": "desserts",
+    "productName": "Classic Tiramisu",
+    "description": "Espresso-soaked ladyfingers layered with whipped mascarpone cream and dusted with cocoa.",
+    "price": 280,
+    "currency": "PHP",
+    "image": "src/products/tiramisu.png"
+  },
+  {
+    "id": 7,
+    "category": "desserts",
+    "productName": "Salted Caramel Brownie",
+    "description": "Fudgy dark chocolate brownie drizzled with house-made salted caramel and flaky sea salt.",
+    "price": 220,
+    "currency": "PHP",
+    "image": "src/products/salted-caramel-brownie.png"
+  },
+  {
+    "id": 8,
+    "category": "desserts",
+    "productName": "Croffle with Cream",
+    "description": "Crispy, buttery croissant waffle topped with whipped cream and a dusting of powdered sugar.",
+    "price": 240,
+    "currency": "PHP",
+    "image": "src/products/croffle.png"
+  }
+]

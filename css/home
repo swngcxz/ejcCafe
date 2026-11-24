@@ -1,0 +1,248 @@
+
+
+main {
+    padding: 0;
+    margin: 0;
+}
+
+article {
+
+
+    padding: 0 11%;
+    max-width: 700px;
+
+    /* min-height: 100vh; */
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+
+
+    transform: rotate(0deg);
+
+    opacity: 1;
+
+    justify-content: center;
+
+
+}
+
+.hero {
+    position: relative;
+    padding-top: 15%;
+}
+
+
+.hero h3 {
+
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Outfit", sans-serif;
+    line-height: 1;
+    letter-spacing: 0.2em;
+    text-transformation: uppercase;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+    font-size: small;
+
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 62px;
+    line-height: 58px;
+    letter-spacing: 0;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+
+    /* Dimensions & Appearance */
+
+    margin: 0;
+    /* Safer than fixed height so text won't overflow if it wraps */
+    opacity: 1;
+}
+
+.hero p {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10px;
+    line-height: 18px;
+    letter-spacing: 0;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+}
+
+
+.hero button {
+    
+
+    min-width: 150px;
+    height: 40px;
+    padding: 12px 16px;
+    border-radius: 100px;
+
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.hero a {
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1;
+    color: var(--bg);
+
+}
+.hero button:hover {
+    background-color: #CE7B26;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   HERO RESPONSIVENESS
+========================================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
+
+    article.hero {
+        width: 65%;
+        max-width: 650px;
+        padding-left: 8%;
+        padding-right: 4%;
+        gap: 26px;
+    }
+
+    .hero {
+        padding-top: 19%;
+    }
+
+    .hero h1 {
+        font-size: clamp(44px, 5.5vw, 56px);
+        line-height: 1.05;
+    }
+
+    .hero p {
+        font-size: 11px;
+        line-height: 1.6;
+        max-width: 38ch;
+    }
+
+    .hero h3 {
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .home-container {
+        width: 100%;
+        min-height: 100svh;
+        height: auto;
+
+        display: flex;
+        align-items: center;
+
+        padding: 90px 0 40px;
+
+        background-size: cover;
+        background-position: 62% center;
+    }
+
+    article.hero {
+        width: 100%;
+        max-width: none;
+
+        padding: 0 9%;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        gap: 20px;
+
+        transform: none;
+    }
+
+    .hero {
+        padding-top: 0;
+    }
+
+    .hero h3 {
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        line-height: 1.2;
+    }
+
+    .hero h1 {
+        font-size: clamp(36px, 10vw, 46px);
+        line-height: 1.02;
+        letter-spacing: -0.5px;
+
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .hero p {
+        font-size: 11px;
+        line-height: 1.6;
+
+        max-width: 36ch;
+        width: 100%;
+    }
+
+    .hero button {
+        min-width: 150px;
+        height: 42px;
+
+        font-size: 14px;
+
+        align-self: flex-start;
+        margin-top: 8px;
+    }
+
+}
+
+
+
+@media (max-width: 380px) {
+
+    .home-container {
+        padding-top: 85px;
+        padding-bottom: 30px;
+    }
+
+    article.hero {
+        padding: 0 8%;
+        gap: 17px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        line-height: 1.03;
+    }
+
+    .hero p {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+}
